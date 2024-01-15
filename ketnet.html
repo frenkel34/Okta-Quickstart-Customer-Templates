@@ -5,26 +5,17 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     </head>
+    {{#if msg}}
+    <script>alert('An error occured: {{msg}}');</script>
+    {{/if}}
     <body>
-        {{#if msg}}
-        <script>alert('An error occured: {{msg}}');</script>
-        {{/if}}
         <div class="cnt_header">
-            {{#if profile }}
-            <img class="img_profile" src="{{profile.picture}}"/>
-            {{ else }}
-            <img class="img_profile" src="https://i.ibb.co/VLJVQ6f/account.png"/>
-            {{/if}}
-            <div class="pop_login">
+            <div class="cnt_login">
                 {{#if profile}}
-                    VRT-Profiel<br>
-                    <strong>{{profile.nickname}}</strong><br><br>
-                    <a href="/logout"><button class="btn_login">Afmelden</button></a>
-                {{else}}
-                <a href="/protected"><button class="btn_login">Aanmelden</button><br><br></a>
-                <a href="#">Nog geen VRT Profiel?</a>
+                <a href="/protected"><div>Afmelden</div><img class="img_profile" src="{{profile.picture}}"/></a></div>
+                {{ else }}
+                <a href="/protected"><div>Aanmelden</div><img class="img_profile" src="https://i.ibb.co/4jwLZd8/New-Project-3.png"/></a></div>
                 {{/if}}
-            </div>
         </div>
         {{#if profile}}
         <div class="cnt_content img_protected"></div>
@@ -61,18 +52,36 @@
 
 
     .img_profile {
-        height: 30px;
+        height: 100px;
         padding: 15px;
         cursor: pointer;
+        float: right;
     }
 
+    .cnt_login {
+        width: 300px;
+        right:0px;
+        position: absolute;
+        text-align: left;
+     }
+ 
+     .cnt_login div {
+        margin-top: 50px;
+        float: left;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-size: 150%;
+     }
+ 
+
     .cnt_header {
-        height: 102px;
-        background-image: url('https://i.ibb.co/4N9RKDb/www-ketnet-be.png');
+        height: 130px;
+        background-image: url('https://i.ibb.co/56PLHMj/www-ketnet-be-2.jpg');
         background-position: left;
         background-repeat: no-repeat;
-        background-color: #0e1834;
+        background-color: #1042df;
         text-align: right;
+        vertical-align: middle;
     }
     .img_home {
         background-image: url('https://i.ibb.co/fSZP8Jx/www-ketnet-be-1.png');
@@ -98,10 +107,6 @@
     }
 </style>
 <script>
-    $(".img_profile").hover(function(){
-        $(".pop_login").show();
-    })
-
     $(".img_profile").hover(function(){
         $( ".pop_login" ).show();
     }, function() {
