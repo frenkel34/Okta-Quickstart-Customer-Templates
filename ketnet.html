@@ -12,7 +12,7 @@
         <div class="cnt_header">
             <div class="cnt_login">
                 {{#if profile}}
-                <a href="/protected"><div>Afmelden</div><img class="img_profile" src="{{profile.picture}}"/></a></div>
+                <a href="/protected"><div>Dag {{profile.nickname}}</div><img class="img_profile" src="{{profile.picture}}"/></a></div>
                 {{ else }}
                 <a href="/protected"><div>Aanmelden</div><img class="img_profile" src="https://i.ibb.co/4jwLZd8/New-Project-3.png"/></a></div>
                 {{/if}}
