@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <link rel="icon" href="https://www.vrt.be/etc.clientlibs/corporate/clientlibs/clientlib-site/resources/images/favicon/favicon.ico">
+        <title>VRT | Home</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        {{#if msg}}
+        <script>alert('An error occured: {{msg}}');</script>
+        {{/if}}
+        <div class="cnt_header">
+            <a href="http://vrt.localhost:3098/"><img class="img_linklogo" src="https://i.ibb.co/KLvqnVt/New-Project-22.jpg"></a>
+            <a href="http://vrt.localhost:3097/"><img class="img_linklogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Ketnet_2021.svg/800px-Ketnet_2021.svg.png"></a>
+            {{#if profile }}
+            <a href="/logout"><img class="img_profile" src="{{profile.picture}}"/></a>
+            {{ else }}
+            <a href="/login"><img class="img_profile" src="https://i.ibb.co/zRqhYhv/New-Project-27.jpg"/></a>
+            {{/if}}
+            <div class="pop_login">
+                {{#if profile}}
+                    VRT-Profiel<br>
+                    <strong>{{profile.nickname}}</strong><br><br>
+                    <a href="/logout"><button class="btn_login">Afmelden</button></a>
+                {{else}}
+                <a href="/protected"><button class="btn_login">Aanmelden</button><br><br></a>
+                <a href="#">Nog geen VRT Profiel?</a>
+                {{/if}}
+            </div>
+        </div>
+        {{#if profile}}
+        <div class="cnt_content img_protected"></div>
+        <div class="cnt_content pop_token">
+            {{#each profile}}
+                <strong>{{@key}}</strong>:<br>{{{this}}}<br><br>
+            {{/each}}
+        </div>
+        {{else}}
+        <div class="cnt_content img_home"></div>
+        {{/if}}
+    </body>
+</html>
+<style>
+    .img_linklogo {
+        
+    }
+
+    a {
+        color: #000000;
+        font-weight: 200;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 90%;
+    }
+    body {
+        font-family: 'Roboto', sans-serif;
+        padding:0;
+        margin:0;
+        background-color: #ffffff;
+        color: #031037;
+    }
+
+    .pop_login {
+        background-color: #e4e5f5;
+        width: 240px;
+        border-radius: 5px;
+        display:none;
+        z-index: 10;
+        position: absolute;
+        margin-right: 20px;
+        right:0px;
+        padding:20px;
+        text-align: left;
+    }
+
+    .pop_token,td {
+        background-color: #010b26;
+        color: #e4e5f5 !important;
+        display:none;
+    }
+
+
+    .img_profile {
+        height: 25px;
+        padding: 15px;
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+
+    .cnt_header{
+        height: 70px;
+    }
+    .img_linklogo {
+        height: 60px;
+        padding:5px;
+    }
+
+    .cnt_header {
+        background-image: url('https://i.ibb.co/nbZtrBN/New-Project-21.jpg');
+        background-position: left;
+        background-repeat: no-repeat;
+        background-color: #ffffff;
+        text-align: right;
+    }
+    .img_home {
+        background-image: url('https://i.ibb.co/58F6CN9/New-Project-25.jpg');
+    }
+    .img_protected {
+        background-image: url('https://i.ibb.co/C22zwHh/New-Project-26.jpg');
+    }
+
+    .cnt_content {
+        height: 3731px;
+        background-repeat: no-repeat;
+        z-index: 1;
+        background-size: contain;
+    }
+
+    .btn_login {
+        background-color: #0150e2;
+        color: #ffffff;
+        border: none;
+        width: calc(100%);
+        padding: 7px;
+        margin:0;
+        text-align: center;
+    }
+</style>
+<script>
+
+
+  $(".img_protected").dblclick(function(){
+    $(".img_protected").hide();
+    $(".pop_token").show();
+  })
+
+  $(".pop_token").dblclick(function(){
+    $(".img_protected").show();
+    $(".pop_token").hide();
+  })
+
+</script>
