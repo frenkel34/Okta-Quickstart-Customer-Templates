@@ -11,8 +11,13 @@
         <script>alert('An error occured: {{msg}}');</script>
         {{/if}}
         <div class="cnt_header">
-            <a href="http://vrt.localhost:3098/"><img class="img_linklogo" src="https://i.ibb.co/KLvqnVt/New-Project-22.jpg"></a>
-            <a href="http://vrt.localhost:3097/"><img class="img_linklogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Ketnet_2021.svg/800px-Ketnet_2021.svg.png"></a>
+            {{#if profile }}
+            <a target="_blank" href="http://vrt.localhost:3098/protected"><img class="img_linklogo" src="https://i.ibb.co/KLvqnVt/New-Project-22.jpg"></a>
+            <a target="_blank" href="http://vrt.localhost:3097/protected"><img class="img_linklogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Ketnet_2021.svg/800px-Ketnet_2021.svg.png"></a>
+            {{else}}
+            <a target="_blank" href="http://vrt.localhost:3098/"><img class="img_linklogo" src="https://i.ibb.co/KLvqnVt/New-Project-22.jpg"></a>
+            <a target="_blank" href="http://vrt.localhost:3097/"><img class="img_linklogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Ketnet_2021.svg/800px-Ketnet_2021.svg.png"></a>
+            {{/if}}
             {{#if profile }}
             <a href="/logout"><img class="img_profile" src="{{profile.picture}}"/></a>
             {{ else }}

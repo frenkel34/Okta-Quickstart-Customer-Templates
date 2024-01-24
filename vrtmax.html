@@ -19,7 +19,7 @@
             <div class="pop_login">
                 {{#if profile}}
                     VRT-Profiel<br>
-                    <strong>{{profile.nickname}}</strong><br><br>
+                    <strong><a href="http://vrt.localhost:3090/profile/view">{{profile.nickname}}</a></strong><br><br>
                     <a href="/logout"><button class="btn_login">Afmelden</button></a>
                 {{else}}
                 <a href="/protected"><button class="btn_login">Aanmelden</button><br><br></a>
