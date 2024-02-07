@@ -1,0 +1,314 @@
+<html>
+    <head>
+        <title>[ Title here ]</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <style>
+            .pag_homes {
+                display: block;
+            }
+        
+            body {
+            }
+        
+            h1 {
+                width: 100%;
+                text-align: center;
+            }
+        
+            p.lbl_title {
+                font-weight: 700;
+            }
+        
+            p.lbl_subtitle {
+                font-weight: 200;
+                font-size: 80%;
+                color: #757575;
+                margin-top: 5px;
+            }
+        
+            .cnt_context {
+                text-align: right;
+                float: right;
+                margin: 20px;
+                height: 400px;
+                width: 50%;
+                margin: 20px;
+            }
+
+            .cnt_debug {
+                background-color: #373737;
+                color:#bada55;
+                font-family: 'Courier New', Courier, monospace;
+                height: 400px;
+                width: 100%;
+                text-align: left;
+                margin: 20px;
+                padding: 20px;
+
+            }
+            
+            .img_context {
+                max-height: 100%;
+            }
+
+            .cnt_appframe {
+                background-color: green;
+                background-image: url('https://www.freeiconspng.com/uploads/apple-iphone-x-landing-page-blank-png-22.png');
+                background-size: 460px;
+                height: 830px;
+                width: 400px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #222222;
+                color: #f6f6f6;
+                font-size: medium;
+                padding: 70 30 20 30;
+                border: 0 transparent;
+                float: left;
+            }
+            .brick {
+                padding: 15px;
+                background-color: #373737;
+                border-radius: 15px;
+                margin: 15px;
+                height: 40px;
+            }
+        
+            .button {
+                background-color: #bada55;
+                color: #373737;
+                cursor: pointer;
+            }
+        
+            .cnt_page {
+                display:none;
+            }
+        
+            .img_icon {
+                font-size: 30px;
+                float: left;
+                margin: 5 40 0 20;
+            }
+            .brk_text {
+                float: left;
+            }
+        
+            .brk_control {
+                float: right;
+            }
+        
+            p {
+                margin: 0px;
+            }
+        
+                input[type=checkbox]{
+                height: 0;
+                width: 0;
+                visibility: hidden;
+                
+            }
+        
+            label {
+                cursor: pointer;
+                text-indent: -9999px;
+                width: 80px;
+                height: 40px;
+                background: #5a5a5a;
+                display: block;
+                border-radius: 100px;
+                position: relative;
+                margin-top: -5px;
+            }
+        
+            label:after {
+                content: '';
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: 32px;
+                height: 30px;
+                background: #fff;
+                border-radius: 90px;
+                transition: 0.3s;
+            }
+        
+            input:checked + label {
+                background: #bada55;
+            }
+        
+            input:checked + label:after {
+                left: calc(100% - 5px);
+                transform: translateX(-100%);
+            }
+        
+            label:active:after {
+                width: 80px;
+            }
+        
+            .cnt_logo {
+                width: 100%;
+                text-align: center;
+            }
+
+            .logo {
+                height: 50px;
+                width: 50px;
+                border-radius: 25px;
+                background-color: #5a5a5a;
+                margin-left: calc(50% - 25px);
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="cnt_appframe">
+            <div class="cnt_logo"><div class="logo"></div></div>
+            <div class="pag_homes cnt_page">
+                <div class="cnt_header">
+                    <h1>Homes</h1>
+                </div>
+                <div class="brick button btn_homes">
+                    <div class="brk_icon"><i class="fas fa-building img_icon"></i></div>
+                    <div class="brk_text">
+                        <p class="lbl_title"><strong>Loft</strong></p>
+                        <p class="lbl_subtitle">Two admins and one member</p>
+                    </div>
+                </div>
+                <div class="brick button btn_home">
+                    <div class="brk_icon"><i class="fas fa-home img_icon"></i></div>
+                    <div class="brk_text">
+                        <p class="lbl_title"><strong>Lake house</strong></p>
+                        <p class="lbl_subtitle">One admin and 14 members</p>
+                    </div>
+                </div>
+                <div class="brick button btn_home">
+                    <div class="brk_icon"><i class="fas fa-warehouse img_icon"></i></div>
+                    <div class="brk_text">
+                        <p class="lbl_title"><strong>Workshop</strong></p>
+                        <p class="lbl_subtitle">One admin </p>
+                    </div>
+                </div>
+            </div>
+            <div class="pag_rooms cnt_page">
+                <div class="cnt_header">
+                    <h1>Rooms</h1>
+                </div>
+                <div class="brick button btn_rooms">
+                    <div class="brk_icon"><i class="fas fa-tv img_icon"></i></div>
+                    <div class="brk_text">
+                        <p class="lbl_title"><strong>Livingroom</strong></p>
+                        <p class="lbl_subtitle">7 lights</p>
+                    </div>
+                </div>
+                <div class="brick button btn_rooms">
+                    <div class="brk_icon"><i class="fas fa-utensils img_icon"></i></div>
+                    <div class="brk_text">
+                        <p class="lbl_title"><strong>Kitchen</strong></p>
+                        <p class="lbl_subtitle">3 lights</p>
+                    </div>
+                </div>
+                <div class="brick button btn_rooms">
+                    <div class="brk_icon"><i class="fas fa-briefcase img_icon"></i></div>
+                    <div class="brk_text">
+                        <p class="lbl_title"><strong>Office</strong></p>
+                        <p class="lbl_subtitle">2 lights and 1 camera</p>
+                    </div>
+                </div>
+                <div class="brick button btn_rooms">
+                    <div class="brk_icon"><i class="fas fa-cloud-sun img_icon"></i></div>
+                    <div class="brk_text">
+                        <p class="lbl_title"><strong>Garden</strong></p>
+                        <p class="lbl_subtitle">1 light and 3 cameras</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pag_devices cnt_page">
+                <div class="cnt_header">
+                    <h1>Devices</h1>
+                </div>
+                <div class="brick">
+                    <div class="brk_icon"><i class="fas fa-lightbulb img_icon"></i></div>
+                    <div class="brk_text">
+                        <p class="lbl_title">Floorshade</p>
+                        <p class="lbl_subtitle">The device is off</p>
+                    </div>
+                    <div class="brk_control"><input type="checkbox" id="switch1" /><label for="switch1">Toggle</label></div>
+                </div>
+                <div class="brick">
+                    <div class="brk_icon"><i class="fas fa-mug-hot img_icon"></i></div>
+                    <div class="brk_text">
+                        <p class="lbl_title">Coffee table</p>
+                        <p class="lbl_subtitle">The device is off</p>
+                    </div>
+                    <div class="brk_control"><input type="checkbox" id="switch2" /><label for="switch2">Toggle</label></div>
+                </div>
+                <div class="brick">
+                    <div class="brk_icon"><i class="fas fa-spinner img_icon"></i></div>
+                    <div class="brk_text">
+                        <p class="lbl_title">Spotlights</p>
+                        <p class="lbl_subtitle">The device is off</p>
+                    </div>
+                    <div class="brk_control"><input type="checkbox" id="switch3" /><label for="switch3">Toggle</label></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="cnt_context">
+            <img class="img_context" style="filter: grayscale(1);" src="https://lw-cdn.com/images/910431A46D6D/k_45acad2a58bfab5a09d815ba9bfa9601;w_1600;h_1600;q_100/7534311.jpg">
+            <div class="cnt_debug"></div>
+        </div>            
+    </body>
+</html>
+<script>
+    $(document).ready(function(){
+        // Open first page
+        $(".pag_homes").show();
+        
+        // Read and update debug data in localStorage
+        console.log('Page load ready');
+        var newLogEntry = '[01:01:01 11:11][FGA] - some message (id='+ Math.floor(Math.random() * 999999999) +')';
+        var sCurrentDebug = localStorage.getItem('debug');
+        var aCurrentDebug = new Array();
+        if (sCurrentDebug) {
+            aCurrentDebug = JSON.parse(sCurrentDebug);
+        } else {
+
+        }
+        aCurrentDebug.push(newLogEntry);
+        sCurrentDebug = JSON.stringify(aCurrentDebug);
+        localStorage.setItem('debug', sCurrentDebug);
+
+        for (let i = 0; i < aCurrentDebug.length; i++) {
+            
+            $(".cnt_debug").html($(".cnt_debug").html()+'<br>'+JSON.stringify(aCurrentDebug[i]))
+            console.log(aCurrentDebug[i])
+        }
+    })
+
+    $(".btn_homes").click(function() {
+        //console.log('open page')
+        $(".cnt_page").hide();
+        $(".pag_rooms").show();
+    })
+
+    $(".btn_rooms").click(function() {
+        //console.log('open page')
+        $(".cnt_page").hide();
+        $(".pag_devices").show();
+    })
+
+    $("input[type=checkbox]").change(function() {
+//        console.log('toggle device');
+        var iGreyScale = 1
+        if ($("#switch1").prop('checked')==true) { iGreyScale = iGreyScale-0.33 };
+        if ($("#switch2").prop('checked')==true) { iGreyScale = iGreyScale-0.33 };
+        if ($("#switch3").prop('checked')==true) { iGreyScale = iGreyScale-0.33 };
+//        console.log(iGreyScale)
+        
+        $(".img_context").css('filter', 'grayscale('+ iGreyScale +')');
+        
+    })
+
+
+</script>
+
